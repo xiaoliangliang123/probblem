@@ -1,0 +1,6 @@
+schedule:
+   cron:
+      test: 0/10 * * * * ?
+
+logging.config:
+    classpath:log/logback-spring.xml

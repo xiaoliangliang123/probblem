@@ -1,0 +1,46 @@
+group 'com.spring'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+
+// ʹ��spring boot
+apply plugin: "org.springframework.boot"
+// ʹ��spring boot���Զ���������
+apply plugin: 'io.spring.dependency-management'
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        // ����ʹ�ù���Դ
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        mavenCentral()
+    }
+    dependencies {
+        // ��spring-boot֧��gradle
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.1.RELEASE")
+    }
+}
+
+
+repositories {
+    // ʹ�ù��ڵ�Դ
+    maven { url 'https://maven.aliyun.com/repository/public' }
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:2.1.1.RELEASE")
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.8.5'
+    testCompile group: 'org.projectlombok', name: 'lombok', version: '1.18.12'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
